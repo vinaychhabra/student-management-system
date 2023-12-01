@@ -33,16 +33,5 @@
     <li>User Interface: Developing a user-friendly interface using ReactJs and JavaScript.</li>
   </ol>
   
-  <h2 align="center">Screenshots</h2>
-  
-  <h3>Login Page</h3>
-  <img src="path/to/login-screenshot.png">
-  
-  <h3>Enrollment Page</h3>
-  <img src="path/to/registration-screenshot.png">
-  
-  <h3>Admin Dashboard</h3>
-  <img src="path/to/admin-dashboard-screenshot.png">
-  
   <h3>Thank You</h3>
 </html>
