@@ -1,0 +1,18 @@
+.name{
+    transition: 500ms;
+    animation: color-change-name 10s infinite;
+}
+
+@keyframes color-change-name{
+    0%{
+        color: #575fcf;
+    }
+
+    50%{
+        color: #ff5e57;
+    }
+
+    100%{
+        color: #05c46b;
+    }
+}

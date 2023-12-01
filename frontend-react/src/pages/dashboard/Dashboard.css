@@ -1,0 +1,21 @@
+.dashboard-card {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(to right, #3494e6, #ec6ead);
+    border: none;
+    border-radius: 10px;
+    color: #fff !important;
+  }
+  
+  .dashboard-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .dashboard-card h5 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .dashboard-card p {
+    margin: 0;
+  }
+  

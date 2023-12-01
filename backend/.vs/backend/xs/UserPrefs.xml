@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{1CC48C0C-FD5B-43E8-A457-4BD40C2BF213}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Controllers/StudentController.cs">
+    <Files>
+      <File FileName="backend/Program.cs" Line="1" Column="1" />
+      <File FileName="backend/Controllers/StudentController.cs" Line="127" Column="53" />
+      <File FileName="backend/Controllers/UserController.cs" Line="1" Column="1" />
+      <File FileName="backend/Models/StudentResponceMessageClass.cs" Line="1" Column="1" />
+      <File FileName="backend/Models/UserClass.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="backend" expanded="True">
+            <Node name="backend" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="StudentController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.backend PreferredExecutionTarget="/Applications/Brave Browser.app" />
+</Properties>

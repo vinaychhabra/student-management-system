@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,800&family=Roboto:ital,wght@0,500;1,500&display=swap');
+
+* {
+    /*font-family: 'Poppins', sans-serif;
+
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;*/
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+/* Add this to your CSS */
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }

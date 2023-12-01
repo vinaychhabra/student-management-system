@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/vinaychhabra/Desktop/C# assig/user-management-system-react-and-asp.net-main/backend/backend/backend.csproj": {}
+  },
+  "projects": {
+    "/Users/vinaychhabra/Desktop/C# assig/user-management-system-react-and-asp.net-main/backend/backend/backend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/vinaychhabra/Desktop/C# assig/user-management-system-react-and-asp.net-main/backend/backend/backend.csproj",
+        "projectName": "backend",
+        "projectPath": "/Users/vinaychhabra/Desktop/C# assig/user-management-system-react-and-asp.net-main/backend/backend/backend.csproj",
+        "packagesPath": "/Users/vinaychhabra/.nuget/packages/",
+        "outputPath": "/Users/vinaychhabra/Desktop/C# assig/user-management-system-react-and-asp.net-main/backend/backend/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/vinaychhabra/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/7.0.311/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "NuGet.Frameworks": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
