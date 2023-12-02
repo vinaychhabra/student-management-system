@@ -13,20 +13,26 @@ import CourseList from './pages/courses/courseList';
 import AddCourse from './pages/courses/AddCourse';
 import ViewCourse from './pages/courses/ViewCourse';
 import EditCourse from './pages/courses/EditCourse';
-import Enrollment from './pages/Enrollment/Enrollment';
+import EnrollmentForm from './pages/Enrollment/EnrollmentForm';
+import EnrollmentList from './pages/Enrollment/EnrollmentList';
+import EnrollmentSuccessPage from './pages/Enrollment/EnrollmentSuccessPage';
+import LandingPage from './pages/landing/LandingPage';
 
 export const Student_BASE_URL = "https://localhost:7140/api/Student";
 export const User_BASE_URL = "https://localhost:7140/api/User";
 export const Course_BASE_URL = "https://localhost:7140/api/Course";
+export const Enroll_BASE_URL = "https://localhost:7140/api/Student";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path='/' Component={Login} />
-        <Route path='/login' Component={Login} />
-        <Route path='/register' Component={Register} />
 
+        <Route path='/admin' Component={Login} />
+        <Route path='/register' Component={Register} />
+        <Route path='/enrollment-form/' Component={EnrollmentForm} />
+        <Route path="/enrollment-success" element={<EnrollmentSuccessPage/>} />
+        <Route path="/" element={<LandingPage />} />
         {/*Private Route */}
         <Route element={<PrivateRoutes />}>
         
@@ -39,7 +45,8 @@ function App() {
           <Route path='/dashboard/student/' Component={Student} />
           <Route path='/dashboard/edit-student/:id' Component={Edituser} />
           <Route path='/dashboard/view-student/:id' Component={Viewuser}/>
-          <Route path='/dashboard/student-enrolled/' Component={Enrollment} />
+      
+          <Route path='/dashboard/enrolled-list/' Component={EnrollmentList} />
         </Route>
       </Routes>
       <Footer />

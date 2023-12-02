@@ -17,8 +17,8 @@ const Sidebar = () => {
         <Link to="/dashboard/courses" className="list-group-item">
           Courses
         </Link>
-        <Link to="/dashboard/student-enrolled/" className="list-group-item">
-          Student Enrolled
+        <Link to="/dashboard/enrolled-list/" className="list-group-item">
+          Enrolled Students
         </Link>
       </ul>
     </div>

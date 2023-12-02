@@ -80,7 +80,7 @@ function EditCourse() {
             <div className='container pt-1'>
               <div className='row'>
                 <div className='col pt-2'>
-                  <p className='h5 fw-bold'>Edit Course</p>
+                  <p className='h5 fw-bold'>Edit Program</p>
                 </div>
                 <div className='col text-end'>
                   <Link to='/dashboard/courses' className='btn btn-success'>
@@ -97,7 +97,7 @@ function EditCourse() {
                   <div className='row mb-3'>
                     <div className='col-12'>
                       <label htmlFor='courseName' className='form-label'>
-                        Course Name
+                        Program Name
                       </label>
                       <input
                         type='text'
@@ -144,7 +144,7 @@ function EditCourse() {
                   </div> */}
 
                   <button className='btn btn-success mt-5' type='submit'>
-                    <i className='fa fa-check-circle' aria-hidden='true'></i> Update Course
+                    <i className='fa fa-check-circle' aria-hidden='true'></i> Update Program
                   </button>
                 </div>
               </div>

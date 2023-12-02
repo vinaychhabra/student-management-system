@@ -24,7 +24,7 @@ function Student() {
         loadAllStudent();
       }
     } else {
-      navigate('/login');
+      navigate('/admin');
     }
   };
 
@@ -71,7 +71,7 @@ function Student() {
 
   const logout = () => {
     localStorage.clear();
-    navigate('/login');
+    navigate('/admin');
   };
 
   const deleteStudent = (e, id) => {

@@ -85,7 +85,7 @@ const Register = () => {
                             <div className="card-header text-center">
                                 <h1 className="text-uppercase display-2 fw-bold">REGISTRATION</h1>
 
-                                <span>Already have an account? <Link to='/login' className='link-offset-2 link-underline link-underline-opacity-0'>Login Here</Link></span>
+                                <span>Already have an account? <Link to='/admin' className='link-offset-2 link-underline link-underline-opacity-0'>Login Here</Link></span>
                             </div>
 
                             <div className="card-body">

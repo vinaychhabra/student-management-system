@@ -1,10 +1,12 @@
-﻿using backend.Models;
+﻿using System;
+using System.Data;
+using System.Security.Cryptography;
+using System.Text;
+using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
-using System;
-using System.Data;
 
 namespace backend.Controllers
 {
@@ -14,10 +16,20 @@ namespace backend.Controllers
     {
         MySqlConnection con = new MySqlConnection("server=localhost;user=root;persistsecurityinfo=True;database=sms_db;password=''");
 
+        // Method to hash passwords using SHA-256
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
         [HttpPost("Registration")]
         public string Registration(UserClass user)
         {
-            UserResponceMessageClass responce = new UserResponceMessageClass();
+            UserResponceMessageClass response = new UserResponceMessageClass();
 
             string Id = Guid.NewGuid().ToString();
 
@@ -27,7 +39,11 @@ namespace backend.Controllers
             cmd.Parameters.AddWithValue("@Id", Id);
             cmd.Parameters.AddWithValue("@Email", user.Email);
             cmd.Parameters.AddWithValue("@UserName", user.UserName);
-            cmd.Parameters.AddWithValue("@Password", user.Password);
+
+            // Hash the password before storing it
+            string hashedPassword = HashPassword(user.Password);
+            cmd.Parameters.AddWithValue("@Password", hashedPassword);
+
             cmd.Parameters.AddWithValue("@Address", user.Address);
             cmd.Parameters.AddWithValue("@PhoneNumber", user.PhoneNumber);
             cmd.Parameters.AddWithValue("@UserRole", user.UserRole);
@@ -39,20 +55,20 @@ namespace backend.Controllers
 
                 if (i > 0)
                 {
-                    responce.Status = "200";
-                    responce.Message = "Successfully Login";
-                    responce.UserName = user.UserName;
-                    responce.Token = Id;
-                    responce.Role = user.UserRole;
+                    response.Status = "200";
+                    response.Message = "Successfully Registered";
+                    response.UserName = user.UserName;
+                    response.Token = Id;
+                    response.Role = user.UserRole;
 
-                    return JsonConvert.SerializeObject(responce);
+                    return JsonConvert.SerializeObject(response);
                 }
                 else
                 {
-                    responce.Status = "400";
-                    responce.Message = "User Cannot Register";
+                    response.Status = "400";
+                    response.Message = "User Cannot Register";
 
-                    return JsonConvert.SerializeObject(responce);
+                    return JsonConvert.SerializeObject(response);
                 }
             }
             catch (Exception ex)
@@ -65,15 +81,17 @@ namespace backend.Controllers
             }
         }
 
-
         [HttpPost("Login")]
         public string Login(LoginClass user)
         {
-            UserResponceMessageClass responce = new UserResponceMessageClass();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM Users WHERE email = @Email AND password = @Password", con);
+            UserResponceMessageClass response = new UserResponceMessageClass();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM Users WHERE email = @Email", con);
 
             cmd.Parameters.AddWithValue("@Email", user.Email);
-            cmd.Parameters.AddWithValue("@Password", user.Password);
+
+            // Hash the entered password for comparison
+            string hashedEnteredPassword = HashPassword(user.Password);
+            cmd.Parameters.AddWithValue("@Password", hashedEnteredPassword);
 
             try
             {
@@ -87,11 +105,11 @@ namespace backend.Controllers
                         string userName = reader["username"].ToString();
                         string userRole = reader["user_role"].ToString();
 
-                        responce.Status = "200";
-                        responce.Message = "Successfully Login";
-                        responce.UserName = userName;
-                        responce.Token = userId;
-                        responce.Role = userRole;
+                        response.Status = "200";
+                        response.Message = "Successfully Login";
+                        response.UserName = userName;
+                        response.Token = userId;
+                        response.Role = userRole;
 
                         // Close the first DataReader before executing the second query
                         reader.Close();
@@ -99,25 +117,25 @@ namespace backend.Controllers
                         MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM Users WHERE email = @Email AND password = @Password", con);
 
                         da.SelectCommand.Parameters.AddWithValue("@Email", user.Email);
-                        da.SelectCommand.Parameters.AddWithValue("@Password", user.Password);
+                        da.SelectCommand.Parameters.AddWithValue("@Password", hashedEnteredPassword);
 
                         DataTable dt = new DataTable();
 
                         da.Fill(dt);
                         if (dt.Rows.Count > 0)
                         {
-                            responce.Data = JsonConvert.SerializeObject(dt);
+                            response.Data = JsonConvert.SerializeObject(dt);
                         }
 
-                        return JsonConvert.SerializeObject(responce);
+                        return JsonConvert.SerializeObject(response);
                     }
                     else
                     {
                         // User not found
-                        responce.Status = "400";
-                        responce.Message = "Invalid Credentials";
+                        response.Status = "400";
+                        response.Message = "Invalid Credentials";
 
-                        return JsonConvert.SerializeObject(responce);
+                        return JsonConvert.SerializeObject(response);
                     }
                 }
             }
@@ -130,9 +148,5 @@ namespace backend.Controllers
                 con.Close();
             }
         }
-
-
-
-
     }
 }

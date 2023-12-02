@@ -36,7 +36,7 @@ function CourseList() {
           handleApiError(error);
         });
     } else {
-      navigate('/login');
+      navigate('/admin');
     }
   };
 
@@ -101,7 +101,7 @@ function CourseList() {
                 </div>
                 <div className='col-12 col-md-9 text-end'>
                   <Link to='/dashboard/add-course' className='btn btn-success'>
-                    <i className='fa fa-user' aria-hidden='true'></i> Add Course
+                    <i className='fa fa-user' aria-hidden='true'></i> Add Program
                   </Link>
                   <CSVLink
                     data={courseList}
@@ -121,8 +121,8 @@ function CourseList() {
               <table className='table table-hover'>
                 <thead>
                   <tr>
-                    <th scope='col'>Course Name</th>
-                    <th scope='col'>Instructor</th>
+                    <th scope='col'>Program Name</th>
+                    <th scope='col'>Coordinator Name</th>
                     {/* Add more columns based on your course data */}
                     <th scope='col'>Action</th>
                   </tr>

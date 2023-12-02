@@ -1,0 +1,140 @@
+/* LandingPage.css */
+.landing-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  header {
+    background: linear-gradient(to right, #0f4c75, #1b262c);
+    color: #bbe1fa;
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .overview-section {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .overview-section h2 {
+    color: #333;
+  }
+  
+  .programs-section {
+    background-color: #1b262c;
+    color: #bbe1fa;
+    padding: 50px 0;
+  }
+  
+  .program-card {
+    background-color: #0f4c75;
+    color: #bbe1fa;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .program-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .admissions-section {
+    background-color: #bbe1fa;
+    color: #1b262c;
+    padding: 50px 0;
+  }
+  
+  .admissions-section h2 {
+    color: #1b262c;
+  }
+  
+  .admissions-section p {
+    font-size: 1.2rem;
+  }
+  
+  .admissions-section .btn-apply {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admissions-section .btn-apply:hover {
+    background-color: #218838;
+  }
+  
+  footer {
+    background-color: #1b262c;
+    color: #bbe1fa;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .testimonials-section {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 50px 0;
+  }
+  
+  .testimonial-card {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .testimonial-author {
+    display: block;
+    margin-top: 15px;
+    font-style: italic;
+  }
+  
+  .contact-section {
+    background-color: #1b262c;
+    color: #bbe1fa;
+    padding: 50px 0;
+  }
+  
+  .contact-section h2 {
+    color: #bbe1fa;
+  }
+  
+  .contact-section p {
+    font-size: 1.2rem;
+  }
+  
+  .contact-section .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-section .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add any additional custom styles as needed */
+  

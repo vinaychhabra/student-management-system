@@ -246,7 +246,7 @@ function AddUser() {
                 <div className="row mb-3">
                   <div className="col-xs-12 col-sm-12 col-md-6">
                     <label htmlFor="course" className="form-label">
-                      Course
+                      Program
                     </label>
                     <select
                       name="course"

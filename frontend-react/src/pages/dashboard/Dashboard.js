@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../header/Header';
 import Sidebar from '../sidebar/sidebar';
-import { Student_BASE_URL, Course_BASE_URL } from '../../App';
+import { Student_BASE_URL, Course_BASE_URL, Enroll_BASE_URL } from '../../App';
 import './Dashboard.css'; // Import the CSS file
 
 function Dashboard() {
   const [totalStudents, setTotalStudents] = useState(0);
   const [totalCourses, setTotalCourses] = useState(0);
+  const [totalEnrolledStudents, setTotalEnrolledStudents] = useState(0);
 
   useEffect(() => {
     // Fetch total students
@@ -37,6 +38,18 @@ function Dashboard() {
       .catch((error) => {
         console.error('Error fetching total courses:', error);
       });
+
+    // Fetch total enrolled students
+    axios
+      .get(Student_BASE_URL + '/GetEnrollStudents')
+      .then((res) => {
+        if (res.data.length > 0) {
+          setTotalEnrolledStudents(res.data.length);
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching total enrolled students:', error);
+      });
   }, []);
 
   return (
@@ -56,7 +69,7 @@ function Dashboard() {
             </div>
 
             <div className='row'>
-              <div className='col-md-6'>
+              <div className='col-md-4'>
                 <div className='card dashboard-card'>
                   <div className='card-body'>
                     <h5 className='card-title'>Total Students</h5>
@@ -64,11 +77,19 @@ function Dashboard() {
                   </div>
                 </div>
               </div>
-              <div className='col-md-6'>
+              <div className='col-md-4'>
                 <div className='card dashboard-card'>
                   <div className='card-body'>
-                    <h5 className='card-title'>Total Courses</h5>
+                    <h5 className='card-title'>Total Programs</h5>
                     <p className='card-text'>{totalCourses}</p>
+                  </div>
+                </div>
+              </div>
+              <div className='col-md-4'>
+                <div className='card dashboard-card'>
+                  <div className='card-body'>
+                    <h5 className='card-title'>Enrolled Students</h5>
+                    <p className='card-text'>{totalEnrolledStudents}</p>
                   </div>
                 </div>
               </div>

@@ -55,7 +55,7 @@ function ViewCourse() {
             <div className='container pt-1'>
               <div className='row'>
                 <div className='col pt-2'>
-                  <p className='h5 fw-bold'>View Course</p>
+                  <p className='h5 fw-bold'>View Program</p>
                 </div>
                 <div className='col text-end'>
                   <Link to='/dashboard/courses' className='btn btn-success'>
@@ -72,7 +72,7 @@ function ViewCourse() {
                   <div className='row mb-3'>
                     <div className='col-xs-12 col-sm-12 col-md-6'>
                       <label htmlFor='' className='form-label'>
-                        Course Name
+                        Program Name
                       </label>
                       <input
                         type='text'

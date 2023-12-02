@@ -1,0 +1,30 @@
+.success-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+  }
+  
+  .success-message-container {
+    text-align: center;
+    background-color: #f0f8ff; /* Light Blue */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .success-header {
+    font-size: 24px;
+    color: #28a745; /* Green */
+    margin-bottom: 20px;
+  }
+  
+  .success-text {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+  }
+  

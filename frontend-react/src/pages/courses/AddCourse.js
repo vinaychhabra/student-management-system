@@ -116,7 +116,7 @@ function AddCourse() {
                 <div className='row mb-3'>
                   <div className='col-12'>
                     <label htmlFor='courseName' className='form-label'>
-                      Course Name
+                      Program Name
                     </label>
                     <input
                       type='text'

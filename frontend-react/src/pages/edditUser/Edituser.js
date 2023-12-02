@@ -279,7 +279,7 @@ function EditUser() {
                         style={{ width: '100%' }} // Make the dropdown wider
                       >
                         <option value="" disabled>
-                          Select a course
+                          Select a Program
                         </option>
                         {courses.map((course) => (
                           <option key={course.CourseID} value={course.CourseID}>
