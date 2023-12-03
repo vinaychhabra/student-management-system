@@ -8,12 +8,8 @@
 <p>The app includes:</P>
 
 <ol>
-  <li>User Registration: Users can register with username, email, password, address, and contact number.</li>
-  <li>User Login: Registered users can securely log in.</li>
-  <li>User Roles: Supports Admin, User, and Staff roles with different access levels.</li>
+  <li>Admin Login:admin can securely log in.</li>
   <li>Admin Dashboard: Admins can add, edit, or delete user information.</li>
-  <li>Staff Dashboard: Staff can add or edit user information but cannot delete it.</li>
-  <li>User Dashboard: Users can add or modify their own information.</li>
 </ol>
 
 ### Technology stack:
